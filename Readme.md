@@ -4,8 +4,9 @@ There are 2 scripts *VaccineCountToTG.py* and *VaccineCountNormal.py*.
 If you want updates on a bot in Telegram use *VaccineCountToTG.py* otherwise use *VaccineCountNormal.py*
 
 ## Installation(For VaccineCountNormal.py)
-No Special Steps is needed. Just run it normally.
-
+```bash
+pip install requests
+```
 ## Installation(For VaccineCountToTG.py)
 
 Requires Python.
@@ -14,6 +15,7 @@ You only need *python-dotenv* if you are going to use VaccineCountToTG.py.
 
 ```bash
 pip install python-dotenv
+pip install requests
 ```
 To send messages to the Telegram Bot, set the environment variable. example.env contains the required format. Your Bot token and Chat Id are required. 
 Bot token is generated when you create your bot. And Chat id can be found by going to "ht<span>tps://<span>api.telegram.org/bot(Your bot token)/getUpdates". Guide for setting up Telegram Bot to receive messages can be found at https://medium.com/@ManHay_Hong/how-to-create-a-telegram-bot-and-send-messages-with-python-4cf314d9fa3e
