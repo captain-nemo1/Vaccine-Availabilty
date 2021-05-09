@@ -2,20 +2,15 @@
 """
 Created on Sun May  9 17:19:56 2021
 
-@author: Administrator
-"""
-
-# -*- coding: utf-8 -*-
-"""
-Created on Sun May  9 14:18:47 2021
-
-@author: Administrator
+@author: Ashit Agarwal
 """
 
 import requests
 from datetime import date
 import re
 
+#Gets the pincode from users and checks if valid or not
+#@returns: returns pincode entered
 def getPincode():
     correct = False
     while correct == False :
@@ -24,11 +19,17 @@ def getPincode():
         if correct == True:
             return pincode
 
+#Gets current date
+#@return : returns date today
 def getCurrentDate():
     dateToday = date.today()
     dateToday = dateToday.strftime("%d-%m-%Y")
     return dateToday
 
+#Gets the Centers data for the entered pincode and date
+#@params : pincode: pincode of the area to be looked for.
+#@params : dateToday: the current date
+#@returns : returns the data received if present other returns empty string
 def getRequest(pincode, dateToday):
     sampleUserAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'
     url = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode={}&date={}".format(pincode, dateToday)
@@ -43,7 +44,10 @@ def getRequest(pincode, dateToday):
     else:
         print("Error Encountered")
         return ""
-    
+
+#Finds the center that have vaccines and calls printSessionsAvailable() funtion
+#to send the centers with vaccine
+#@param: result: Contains data of all the centers for the pincode
 def showResults(result):
     centerCount = len(result)
     totalCenterVaccineAvailableAt = 0
@@ -60,7 +64,8 @@ def showResults(result):
 
     if totalCenterVaccineAvailableAt == 0 :
         print("All slots are booked")
-        
+  
+#Prints available vaccine count
 def printSessionsAvailable(sessions, sessionsCount):
      for i in range(sessionsCount):
             vaccineAvailable = sessions[i].get("available_capacity")
