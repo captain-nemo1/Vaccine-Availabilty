@@ -75,8 +75,8 @@ def printSessionsAvailable(sessions, sessionsCount):
                 message = "On Date {} vaccines available are {} for age {}+".format(dateAvailable,vaccineAvailable, ageLimit)
                 telegram_bot_sendtext(message)
 
-#pincode = getPincode()
 pincode = 201005
+#pincode = getPincode()
 dateToday = getCurrentDate()
 telegram_bot_sendtext("Get 7 days covid vaccination data from {}".format(dateToday))
 result = getRequest(pincode, dateToday)

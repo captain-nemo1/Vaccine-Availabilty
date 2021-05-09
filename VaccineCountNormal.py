@@ -70,8 +70,8 @@ def printSessionsAvailable(sessions, sessionsCount):
                 message = "On Date {} vaccines available are {} for age {}+".format(dateAvailable,vaccineAvailable, ageLimit)
                 print(message)
 
-#pincode = getPincode()
 pincode = 201005
+#pincode = getPincode()
 dateToday = getCurrentDate()
 print("Get 7 days covid vaccination data from {}".format(dateToday))
 result = getRequest(pincode, dateToday)
