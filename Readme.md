@@ -38,5 +38,5 @@ python VaccineCountToTG.py
 For VaccineCommandLinePincode.py
 
 ```bash
-python VaccineCountToTG.py (your pincode here)
+python VaccineCommandLinePincodepy.py (your pincode here)
 ```
