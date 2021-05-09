@@ -1,7 +1,7 @@
 # Vaccine-Availabilty
 Python script to let you know the available vaccine slots on Cowin platform.
-There are 2 scripts *VaccineCountToTG.py* and *VaccineCountNormal.py*.
-If you want updates on a bot in Telegram use *VaccineCountToTG.py* otherwise use *VaccineCountNormal.py*
+There are 3 scripts *VaccineCountToTG.py*, *VaccineCommandLinePincode.py* and *VaccineCountNormal.py*. 
+If you want updates on a bot in Telegram use *VaccineCountToTG.py* otherwise use *VaccineCountNormal.py* or *VaccineCommandLinePincode.py*
 
 ## Installation(For VaccineCountNormal.py and VaccineCommandLinePincode.py )
 ```bash
