@@ -13,9 +13,15 @@ import os
 
 load_dotenv()
 
-token = os.getenv('bot_token')
-bot_chatID = os.getenv('bot_chatID')
-
+def get_last_chat_id_and_text():
+    updates = "https://api.telegram.org/bot{}/getUpdates".format(token)
+    global response
+    response = requests.get(updates)
+    response = response.json()
+    last_update = len(response["result"]) - 1 
+    chat_id = response["result"][last_update]["message"]["chat"]["id"]
+    return str(chat_id)
+    
 def telegram_bot_sendtext(bot_message):
      send_text = 'https://api.telegram.org/bot' + token + '/sendMessage?chat_id=' + bot_chatID + '&parse_mode=Markdown&text=' + bot_message
      response = requests.get(send_text)
@@ -74,6 +80,9 @@ def printSessionsAvailable(sessions, sessionsCount):
             if(vaccineAvailable > 0):
                 message = "On Date {} vaccines available are {} for age {}+".format(dateAvailable,vaccineAvailable, ageLimit)
                 telegram_bot_sendtext(message)
+
+token = os.getenv('bot_token')
+bot_chatID = get_last_chat_id_and_text()
 
 pincode = 201005
 #pincode = getPincode()

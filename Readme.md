@@ -17,8 +17,8 @@ You only need *python-dotenv* if you are going to use VaccineCountToTG.py.
 pip install python-dotenv
 pip install requests
 ```
-To send messages to the Telegram Bot, set the environment variable. example.env contains the required format. Your Bot token and Chat Id are required. 
-Bot token is generated when you create your bot. And Chat id can be found by going to "ht<span>tps://<span>api.telegram.org/bot(Your bot token)/getUpdates". Guide for setting up Telegram Bot to receive messages can be found at https://medium.com/@ManHay_Hong/how-to-create-a-telegram-bot-and-send-messages-with-python-4cf314d9fa3e
+To send messages to the Telegram Bot, set the environment variable. example.env contains the required format. Your Bot token is required in the .env file.
+Bot token is generated when you create your bot. Guide for setting up Telegram Bot to receive messages can be found at https://medium.com/@ManHay_Hong/how-to-create-a-telegram-bot-and-send-messages-with-python-4cf314d9fa3e
 
 ## Usage
 
