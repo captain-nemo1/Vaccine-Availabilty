@@ -46,3 +46,20 @@ For VaccineCommandLinePincode.py
 ```bash
 python VaccineCommandLinePincodepy.py (your pincode here)
 ```
+
+## Automation(For VaccineCountToTG.py)
+
+For Windows
+```bash
+Run the windowsAutomation.bat, default time is 120 seconds.
+To change it edit the file and change the 120 into the number of seconds required.
+```
+
+For Linux
+```bash
+chmod +x linuxAutomation.sh
+./linuxAutomation.sh
+
+Default timeout is 120 seconds.
+To change it edit the file and change the 120 into the number of seconds required.
+```
