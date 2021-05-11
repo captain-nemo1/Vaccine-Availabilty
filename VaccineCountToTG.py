@@ -90,7 +90,7 @@ def printSessionsAvailable(sessions, sessionsCount):
             vaccineAvailable = sessions[i].get("available_capacity")
             dateAvailable = sessions[i].get("date")
             ageLimit = sessions[i].get("min_age_limit")
-            if(vaccineAvailable > 0):
+            if(vaccineAvailable > 0 ):
                 message = "On Date {} vaccines available are {} for age {}+".format(dateAvailable,vaccineAvailable, ageLimit)
                 telegramBotSendText(message)
 
