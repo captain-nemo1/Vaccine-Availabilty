@@ -9,7 +9,7 @@ import requests
 from datetime import date
 import re
 import os
-
+import time
 
 #Gets the last chat id so it can be used later to send message 
 def getLastChatId():
@@ -107,3 +107,5 @@ while True:
         showResults(result)
     else:
         telegramBotSendText("No Center Available")
+        
+    time.sleep(10)
