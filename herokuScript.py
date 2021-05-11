@@ -62,6 +62,7 @@ def getRequest(pincode, dateToday):
         return result
     else:
         telegramBotSendText("Error Encountered")
+        print(response.text)
         return ""
     
 #Finds the center that have vaccines and calls printSessionsAvailable() funtion
