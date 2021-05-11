@@ -1,1 +1,1 @@
-worker: python VaccineCountToTG.py
+worker: python herokuScript.py
