@@ -51,9 +51,9 @@ def getCurrentDate():
 def getRequest(pincode, dateToday):
     sampleUserAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'
     url = "https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode={}&date={}".format(pincode, dateToday)
-    headers = {'accept': 'application/json','Accept-Language': 'hi_IN', 'User-Agent': sampleUserAgent,
-               'X-Forwarded-For':str(ip)}
-    response = requests.get(url, headers=headers)
+    headers = {'accept': 'application/json','Accept-Language': 'hi_IN', 'User-Agent': sampleUserAgent}
+    proxy = {"http":"http://116.202.183.54:2223"}
+    response = requests.get(url, headers=headers, proxies=proxy)
     
     
     if response.status_code == 200:
@@ -94,12 +94,11 @@ def printSessionsAvailable(sessions, sessionsCount):
                 telegramBotSendText(message)
 
 token = os.environ.get('bot_token')
-ip = os.environ.get('ip')
 
 while True:
     bot_chatID = os.environ.get('ashit')
 
-    pincode = 201005
+    pincode = 110001
     #pincode = getPincode()
     dateToday = getCurrentDate()
     telegramBotSendText("Get 7 days covid vaccination data from {}".format(dateToday))
